@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | NFT preview card component</title>
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: hsl(217, 54%, 11%);
+    }
+
+    .attribution {
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    .card_bg {
+      background-color: hsl(216, 50%, 16%);
+    }
+
+    .line {
+      border-color: hsl(215, 32%, 27%);
+    }
+
+    .text_cyan {
+      color: hsl(178, 100%, 50%);
+    }
+
+    .soft-blue {
+      color: hsl(215, 51%, 70%);
+    }
+
+    .link {
+      color: white;
+      transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .link:hover {
+      color: hsl(178, 100%, 50%);
+    }
+
+    .card {
+      background: url('/solutions/nft-preview-card-component/images/image-equilibrium.jpg');
+      background-size: cover;
+    }
+
+    .card:hover {
+      background-color: rgba(0, 255, 247, 0.5);
+    }
+
+    .card:hover .overlay {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .card:hover .cyan_background {
+      opacity: 1;
+    }
+
+    .cyan_background {
+      position: absolute;
+      background-color: rgba(0, 255, 247, 0.5);
+      opacity: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .overlay {
+      position: absolute;
+      opacity: 0;
+      transform: scale(2);
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    .mobile {
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+    @media (max-width: 375px) {
+      .mobile {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .attribution {
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main role="main" class="flex flex-col h-screen justify-between">
+    <div class="flex justify-center items-center drop-shadow-lg mobile">
+      <div class="flex flex-col m-auto gap-3 p-5 card_bg rounded-2xl">
+        <div class="flex overflow-hidden rounded-xl relative w-72 h-72 cursor-pointer card">
+          <div class="cyan_background">
+            <img src="/solutions/nft-preview-card-component/images/icon-view.svg" alt="View" class="overlay">
+          </div>
+        </div>
+        <h1 class="text-2xl font-bold w-72 text-white"><a href="" class="link">
+            Equilibrium #3429
+          </a></h1>
+        <p class="w-72 soft-blue text-lg font-light">Our Equilibrium collection promotes balance and calm.</p>
+        <div class="flex justify-between w-72">
+          <div class="flex items-center gap-1">
+            <img src="/solutions/nft-preview-card-component/images/icon-ethereum.svg" alt="Ethereum">
+            <p class="font-bold text_cyan text-sm">0.041 ETH</p>
+          </div>
+          <div class="flex items-center gap-1">
+            <img src="/solutions/nft-preview-card-component/images/icon-clock.svg" alt="Ethereum">
+            <p class="soft-blue text-sm">3 days left</p>
+          </div>
+        </div>
+        <div class="relative flex py-2 items-center">
+          <div class="flex-grow border-t line"></div>
+        </div>
+        <div class="flex items-center gap-2 soft-blue">
+          <img src="/solutions/nft-preview-card-component/images/image-avatar.png" alt="Jules Wyvern"
+            class="w-10 rounded-full border-white border-2">
+          <p class="text-sm font-light">Creation of <a href="" class="link">Jules Wyvern</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="attribution text-md mb-2 text-white">
+      Challenge by <a href="https://www.frontendmentor.io/challenges/nft-preview-card-component-SbdUL_w0U" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/onursedef">Onur Sedef</a>
+    </div>
+  </main>
+</body>
+
+</html>
